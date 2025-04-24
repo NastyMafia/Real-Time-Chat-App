@@ -4,7 +4,7 @@ import './App.css';
 
 // Connect to the Socket.IO server
 // Make sure the URL matches your server's address and port
-const SOCKET_SERVER_URL = 'http://localhost:4000';
+const SOCKET_SERVER_URL = 'https://realtime-chat-app-hrtq.onrender.com';
 
 function App() {
   const [socket, setSocket] = useState(null);
