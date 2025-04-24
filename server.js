@@ -11,8 +11,7 @@ const server = http.createServer(app);
 // Configure CORS
 app.use(cors({
     origin: [
-        'https://realtime-chat-nffwxwxkw-nastymafias-projects.vercel.app',
-        'https://nastymafia.github.io/MyPortfolio'
+        'https://nastymafia.github.io/MyPortfolio/chat-app/index.html'
     ],
     methods: ['GET', 'POST'],
 }));
@@ -21,8 +20,7 @@ app.use(cors({
 const io = new Server(server, {
   cors: {
     origin: [
-        'https://realtime-chat-nffwxwxkw-nastymafias-projects.vercel.app',
-        'https://nastymafia.github.io/MyPortfolio'
+        'https://nastymafia.github.io/MyPortfolio/chat-app/index.html'
     ],
     methods: ["GET", "POST"]
   }
