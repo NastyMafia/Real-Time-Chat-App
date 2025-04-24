@@ -10,14 +10,20 @@ const server = http.createServer(app);
 
 // Configure CORS
 app.use(cors({
-    origin: 'https://realtime-chat-nffwxwxkw-nastymafias-projects.vercel.app',
+    origin: [
+        'https://realtime-chat-nffwxwxkw-nastymafias-projects.vercel.app',
+        'https://nastymafia.github.io' // Allow requests from your portfolio
+    ],
     methods: ['GET', 'POST'],
 }));
 
 // Allow requests from your React app's development server
 const io = new Server(server, {
   cors: {
-    origin: "https://realtime-chat-nffwxwxkw-nastymafias-projects.vercel.app", // Adjust if your React app runs on a different port
+    origin: [
+        'https://realtime-chat-nffwxwxkw-nastymafias-projects.vercel.app',
+        'https://nastymafia.github.io' // Allow requests from your portfolio
+    ],
     methods: ["GET", "POST"]
   }
 });
@@ -70,5 +76,5 @@ io.on('connection', (socket) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Server listening on *:${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
