@@ -10,14 +10,14 @@ const server = http.createServer(app);
 
 // Configure CORS
 app.use(cors({
-    origin: 'https://realtime-chat-ld7bqetpp-nastymafias-projects.vercel.app',
+    origin: 'https://realtime-chat-nffwxwxkw-nastymafias-projects.vercel.app',
     methods: ['GET', 'POST'],
 }));
 
 // Allow requests from your React app's development server
 const io = new Server(server, {
   cors: {
-    origin: "https://realtime-chat-ld7bqetpp-nastymafias-projects.vercel.app", // Adjust if your React app runs on a different port
+    origin: "https://realtime-chat-nffwxwxkw-nastymafias-projects.vercel.app", // Adjust if your React app runs on a different port
     methods: ["GET", "POST"]
   }
 });
