@@ -3,16 +3,21 @@ import http from 'http';
 import { Server } from 'socket.io';
 import cors from 'cors';
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 10000;
 
 const app = express();
 const server = http.createServer(app);
 
 // Configure CORS
+app.use(cors({
+    origin: 'https://realtime-chat-ld7bqetpp-nastymafias-projects.vercel.app',
+    methods: ['GET', 'POST'],
+}));
+
 // Allow requests from your React app's development server
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3000", // Adjust if your React app runs on a different port
+    origin: "https://realtime-chat-ld7bqetpp-nastymafias-projects.vercel.app", // Adjust if your React app runs on a different port
     methods: ["GET", "POST"]
   }
 });
