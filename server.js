@@ -11,16 +11,16 @@ const server = http.createServer(app);
 // Configure CORS
 app.use(cors({
     origin: [
-        'https://nastymafia.github.io/MyPortfolio/chat-app/index.html'
+        'https://nastymafia.github.io' // Allow the entire domain
     ],
     methods: ['GET', 'POST'],
 }));
 
-// Allow requests from your React app's development server
+// Allow requests from React app's development server
 const io = new Server(server, {
   cors: {
     origin: [
-        'https://nastymafia.github.io/MyPortfolio/chat-app/index.html'
+        'https://nastymafia.github.io' // Allow the entire domain
     ],
     methods: ["GET", "POST"]
   }
